@@ -1,38 +1,124 @@
-.App {
+*{
+  box-sizing:border-box;
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*Style the header*/
+header{
+  background-color: #666;
+  padding: 30px;
   text-align: center;
+  font-size: 35px;
+  color: white;
+  display:grid;
+  grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#headerTitle {
+  justify-self: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#search {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#search input {
+  margin-left: 10px;
+  height: 30px;
+  margin-top: 5px;
+}
+/*Container for flexboxes*/
+section{
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav{
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+/* Style the list inside the menu */
+nav ul{
+  list-style-type: none;
+  padding: 0;
+}
+/*Style the content*/
+article{
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+/*Style the footer*/
+footer{
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+/*Responsive layout - makes the menu and the content (inside the section) sit on top of each other in */
+@media screen and (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.category-product-title{
+  grid-column: 1/span 3;
+  color: darkslategrey;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+
+.category-product-image-container{
+  padding: 10px;
+  width: 60%;
+}
+
+.category-product-image-container img{
+  width: 100%;
+  height: 100%;
+}
+
+.category-product-info-header {
+  display: flex;
+}
+
+.category-product-info-finance-price {
+  color: darkslategray;
+  font-size: 2em;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.category-product-info-dimensions,
+.category-product-info-capacity {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-product-info-dimensions h3,
+.category-product-info-capacity h3,
+.category-product-info-feature h3 {
+  color: darkslategray;
+  font-size: 1em;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.category-product-info-feature li {
+  padding-top: 5px;
+}
+
+.category-product-info-stock {
+  padding-left: 10px;
 }
